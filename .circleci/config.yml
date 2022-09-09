@@ -1,0 +1,15 @@
+---
+version: 2.1
+
+orbs:
+  aws-ecr: circleci/aws-ecr@7.0.0
+
+jobs:
+  build:
+    machine:
+      image: ubuntu-2004:202101-01
+    resource_class: arm.medium
+    steps:
+      - checkout
+      - run: uname -a
+      - aws-ecr/ecr-login
